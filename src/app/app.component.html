@@ -1,21 +1,16 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
- 
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+<app-nav></app-nav>
 
-<router-outlet></router-outlet>
+<app-jumbotron 
+[jumbo]="firstJumbo"
+(delete)="onJumboDelete($event)">
+
+</app-jumbotron>
+
+<app-media></app-media>
+
+<app-footer class="mainFooter"></app-footer>
+
+
+
+
+

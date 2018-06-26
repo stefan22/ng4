@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  firstJumbo = {
+    id:1,
+    name:'some jumbo',
+    category: 'some cat',
+    isfav: 'no'
+  }
+  onJumboDelete(jumbo) {
+    console.log(jumbo);
+  }
 }

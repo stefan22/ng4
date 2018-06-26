@@ -78,3 +78,54 @@
     // Constructors for components,directives, pipes and services you write
     // Angular will create an instance of that type
 ```
+
+- service is typically a js class or function where we have encapsulated some logic
+
+- when writting components, it is prefer to write the classes for these in a way that
+  the class logic consists of only brokering data to and from the view (adding functionality to the view)
+- Dont suppose to put application business logic in components and directives but on the
+  service.
+
+```
+  ex. a component that needs to display a media item
+
+  //you can write a js class that handles finding the record data and returning it
+  //as an object --> that would be a service
+      class MediaItemService {
+          getById(id) {}
+      }
+  //then using angular DI framework specify that ur MediaItemComponent
+  //is going to use that service
+  //by requesting service from component logic and make it avail to view
+
+
+```
+
+```
+    ex: Decorator
+
+    @Component() {
+
+      //component is the decorator name
+      //starts with @
+    }
+
+    //for example: (module decorator, component decorator)
+    @NgModule inside of app.module tells angular that it is an angular module
+    @Component inside of app.component tells angular this is a component
+  
+```
+
+metadata
+
+```
+    ex of metadata (are the properties inside of the decorator)
+
+    
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.css']
+    })
+
+```
