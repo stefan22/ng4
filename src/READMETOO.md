@@ -129,3 +129,58 @@ metadata
     })
 
 ```
+
+> Note: Assignments are not supported in Interpolation.
+
+
+### Input decorator (sending an item to display)
+
+- it allows you to define properties for components you create, and make them
+  available to be set via the property binding syntax.
+
+- input decorator is design to use on a class property
+
+```
+  ex:
+    //file: media.component.ts
+
+    @Input() eventItem;
+
+    // this will tell angular that we want it to support any property bindings
+    // placed on instances of the media component elements
+
+
+    //file: app.component.ts
+
+    //inside class:
+
+      firstEventItem = {
+        id:1,
+        name: 'Some Crazy event',
+        year: 2018,
+        description: 'yes this is some crazy event, I already told you so.',
+        faqs: [
+          {
+            question: 'what is this?',
+            answer: 'some random question'
+          }
+        ]
+      };
+
+      //file: app.component.html
+
+      // where [eventItem] is the target
+      // and firstEventItem is the source.
+      // when this is parse, angular is going to find either a match on a
+      // dom element property or property decorated by the Input decorator
+      // on a component or directive that applies to that element.
+
+      <app-media [eventItem]="firstEventItem"></app-media>
+
+
+
+
+
+
+
+```

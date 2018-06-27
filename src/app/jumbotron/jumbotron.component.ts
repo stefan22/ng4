@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-jumbotron',
@@ -6,16 +6,12 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./jumbotron.component.css']
 })
 export class JumbotronComponent implements OnInit {
-  @Input() jumbo;
-  @Output() delete = new EventEmitter();
   
   constructor() { }
 
   ngOnInit() {
   }
 
-  onDelete() {
-    this.delete.emit(this.jumbo);
-  }
+  
 
 }

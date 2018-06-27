@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-media',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./media.component.css']
 })
 export class MediaComponent implements OnInit {
-
+  @Input() eventItem;
+  
+  
   constructor() { }
 
   ngOnInit() {
   }
+
+  
+
+
 
 }

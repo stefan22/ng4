@@ -5,14 +5,27 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  firstJumbo = {
+
+  firstEventItem = {
+
     id:1,
-    name:'some jumbo',
-    category: 'some cat',
-    isfav: 'no'
-  }
-  onJumboDelete(jumbo) {
-    console.log(jumbo);
-  }
-}
+    name: 'Source App.component',
+    year: 2018,
+    description: 'using input decorator in media component.',
+    faqs: [
+      {
+        question: 'what is this?',
+        answer: 'some random question'
+      }
+    ]
+
+
+  };
+
+
+
+
+
+}//AppComponent class

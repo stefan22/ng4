@@ -1,12 +1,10 @@
 <app-nav></app-nav>
 
-<app-jumbotron 
-[jumbo]="firstJumbo"
-(delete)="onJumboDelete($event)">
+<app-jumbotron>
 
 </app-jumbotron>
 
-<app-media></app-media>
+<app-media [eventItem]="firstEventItem"></app-media>
 
 <app-footer class="mainFooter"></app-footer>
 

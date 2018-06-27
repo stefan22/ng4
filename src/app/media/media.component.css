@@ -1,3 +1,7 @@
 .marginTop {
   margin-top: 1em;
 }
+
+button.btn.btn-default:focus {
+  outline:none;
+}
