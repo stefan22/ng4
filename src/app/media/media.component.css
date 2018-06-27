@@ -5,3 +5,13 @@
 button.btn.btn-default:focus {
   outline:none;
 }
+
+.dataComponent {
+  overflow: hidden;
+  margin-bottom: 3em;
+}
+h5.dtalign {
+  text-align: right;
+  width:160px;
+  color:#d43f3a
+}

@@ -1,21 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-media',
   templateUrl: './media.component.html',
   styleUrls: ['./media.component.css']
 })
-export class MediaComponent implements OnInit {
+export class MediaComponent {
   @Input() eventItem;
+  @Output() click = new EventEmitter();
   
+  items:any[];
   
-  constructor() { }
 
-  ngOnInit() {
+  constructor(private dataService: DataService) { }
+
+  ngOnInit(item) {
+    this.items = this.dataService.get();
   }
 
-  
 
 
 
-}
+}// MediaComponent class

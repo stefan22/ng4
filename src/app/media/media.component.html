@@ -1,28 +1,56 @@
 <div class="container marketing">
 
-  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="list-group dataComponent">
+        <h2>Some data</h2>
+        <div class="col-lg-6 list-group-item"
+             #itemContainer 
+             *ngFor="let item of items">
+              <h5 class="dtalign">User</h5>
+              <dl class="dl-horizontal">
+                <dt>id</dt>
+                <dd>{{ item.id }}</dd>
+                <dt>name</dt>
+                <dd>{{ item.name }}</dd>
+                <dt>username</dt>
+                <dd>{{ item.username }}</dd>
+                <dt>email</dt>
+                <dd>{{ item.email }}</dd>
+                <h5 class="dtalign">Address</h5>
+                <div class="dl-horizontal"
+                  *ngFor="let add of item.address">
+                  <dt *ngIf="add.street">street</dt>
+                  <dd>{{ add.street }}</dd>
+                  <dt *ngIf="add.suite">suite</dt>
+                  <dd>{{ add.suite }}</dd>
+                  <dt *ngIf="add.city">city</dt>
+                  <dd>{{ add.city }}</dd>
+                </div> 
+              </dl>  
+         
+        </div>
+          <!-- endof col-lg-4 list-group-item -->
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
   <div class="row marginTop">
     <div class="col-lg-4">
       <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
         width="140" height="140">
-      <h2>{{ eventItem.name }}</h2>
-        <dl>
-          <dt>
-            {{ eventItem.id }}
-          </dt>
-          <dt>
-           {{ eventItem.description }}
-          </dt>
-          <dt *ngFor="let faq of eventItem.faqs">
-            {{ faq.question }}
-            {{ faq.answer }}
-          </dt>
-          <dt>
-            {{ eventItem.year }}
-          </dt>
-         
-        </dl>
-        <button class="btn btn-default" href="#" role="button">
+        <h2>Heading</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
+          purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p>
+     
+        <button class="btn btn-default" href="#" 
+        role="button">
           View event »
         </button>
       

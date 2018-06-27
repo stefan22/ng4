@@ -7,7 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { MediaComponent } from './media/media.component';
-import { EventdetailsComponent } from './eventdetails/eventdetails.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -15,14 +15,16 @@ import { EventdetailsComponent } from './eventdetails/eventdetails.component';
     NavComponent,
     FooterComponent,
     JumbotronComponent,
-    MediaComponent,
-    EventdetailsComponent
+    MediaComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

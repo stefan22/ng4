@@ -178,9 +178,47 @@ metadata
       <app-media [eventItem]="firstEventItem"></app-media>
 
 
+```
 
 
+### Output decorators
+
+- it allows you to expose event bindings on components.
+- similar to how u use input.
+- the difference here is that we need to also set up an event emmitter object
+- it exposes an event that you can subscribe to on a custom element
+
+```
+import { Component, Output, EventEmitter } from '@angular/core';
+
+export class ...
+  @Output() delete = new EventEmitter();
+
+  onDelete() {
+    console.log('deleted');
+    this.delete.emit(this.eventItem);
+
+  }
+
+  //emit is a method of the delete object
+
+```
+
+### ngIf
+
+- it will conditionally render the DOM element that the directive is on
+
+### *ngIf is equals to this:
+
+- useful when multiple divs
+
+```
+    <ng-template [ngIf]="eventItem">
 
 
+        <div> events on :  {{ eventItem.name }} </div>
+
+
+    </ng-template>
 
 ```
