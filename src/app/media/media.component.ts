@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { DataService } from '../data.service';
+import { Component } from '@angular/core';
+import { AppdataService } from '../appdata.service';
 
 @Component({
   selector: 'app-media',
@@ -7,17 +7,18 @@ import { DataService } from '../data.service';
   styleUrls: ['./media.component.css']
 })
 export class MediaComponent {
-  @Input() eventItem;
-  @Output() click = new EventEmitter();
+  users:any
   
-  items:any[];
-  
+  constructor(private appdataService: AppdataService) { }
 
-  constructor(private dataService: DataService) { }
-
-  ngOnInit(item) {
-    this.items = this.dataService.get();
+  ngOnInit() {
+    this.appdataService.get().subscribe(users => {
+        var users = this.users = users;
+        console.log(users);
+      });
   }
+
+  
 
 
 

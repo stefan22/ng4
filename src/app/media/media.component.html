@@ -6,7 +6,7 @@
         <h2>Some data</h2>
         <div class="col-lg-6 list-group-item"
              #itemContainer 
-             *ngFor="let item of items">
+             *ngFor="let item of users">
               <h5 class="dtalign">User</h5>
               <dl class="dl-horizontal">
                 <dt>id</dt>
@@ -18,26 +18,18 @@
                 <dt>email</dt>
                 <dd>{{ item.email }}</dd>
                 <h5 class="dtalign">Address</h5>
-                <div class="dl-horizontal"
-                  *ngFor="let add of item.address">
-                  <dt *ngIf="add.street">street</dt>
-                  <dd>{{ add.street }}</dd>
-                  <dt *ngIf="add.suite">suite</dt>
-                  <dd>{{ add.suite }}</dd>
-                  <dt *ngIf="add.city">city</dt>
-                  <dd>{{ add.city }}</dd>
-                </div> 
-              </dl>  
-         
-        </div>
-          <!-- endof col-lg-4 list-group-item -->
-      </div>
+                <dt>street</dt>
+                <dd>{{ item.address.street }}</dd>
+                <dt>suite</dt>
+                <dd>{{ item.address.suite }}</dd>
+                <dt>city</dt>
+                <dd>{{ item.address.city }}</dd>  
+              </dl>    
+        </div><!-- endof col-lg-6 list-group-item -->
+      </div> <!-- endof list-group -->
     </div>
   </div>
-
-
-
-
+  <!-- endof row -->
 
 
   <div class="row marginTop">

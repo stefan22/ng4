@@ -1,15 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+
 
 @Injectable()
-
-
-export class DataService {
+export class AppdataService {
   url = "http://jsonplaceholder.typicode.com/users";
-
-  constructor() { }
+  
+  
+  constructor(private http: HttpClient) { }
 
   get() {
-    return this.items;
+    return this.http.get(this.url)
+    .pipe(
+      map((response) => {
+        return response;
+      })
+    );
+
   }
 
   add(item) {
@@ -17,11 +25,10 @@ export class DataService {
   }
 
   delete(item) {
-    var index = this.items.indexOf(item);
-    if (index >= 0) {
-      this.items.splice(index, 1);
-    }
+    var del = this.items.indexOf(item);
+    this.items.splice(del,1);
   }
+
 
 
   items = [
@@ -107,15 +114,23 @@ export class DataService {
       }
     }
 
-
-
-
-
   ];// items
 
 
+  
+}// AppdataService class
 
 
-}// DataService class
+// interface Users {
+//   id: number;
+//   name: string;
+//   username: string;
+//   email: string;
+//   street: string;
+//   suite: string;
+//   city: string;
+// }
 
-
+// interface UsersResponse {
+//   users: Users[];
+// }

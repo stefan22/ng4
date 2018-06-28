@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { MediaComponent } from './media/media.component';
-import { DataService } from './data.service';
+import { AppdataService } from './appdata.service';
+
 
 @NgModule({
   declarations: [
@@ -20,10 +23,11 @@ import { DataService } from './data.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    DataService
+    AppdataService
   ],
   bootstrap: [AppComponent]
 })
